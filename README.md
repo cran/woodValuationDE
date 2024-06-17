@@ -1,7 +1,14 @@
-woodValuationDE
+woodValuationDE: Wood Valuation Germany <img src='man/fig/logo.png' align="right" height="139" />
 ===================================
 
-A package for the monetary valuation of wood in German forests (stumpage
+[![](https://www.r-pkg.org/badges/version/woodValuationDE)](https://cran.r-project.org/package=woodValuationDE)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/woodValuationDE?color=green)](https://cran.r-project.org/package=woodValuationDE)
+[![](http://cranlogs.r-pkg.org/badges/last-month/woodValuationDE?color=green)](https://cran.r-project.org/package=woodValuationDE)
+[![](https://img.shields.io/github/last-commit/Forest-Economics-Goettingen/woodValuationDE.svg)](https://github.com/Forest-Economics-Goettingen/woodValuationDE/commits/master)
+[![](https://img.shields.io/github/languages/code-size/Forest-Economics-Goettingen/woodValuationDE.svg)](https://github.com/Forest-Economics-Goettingen/woodValuationDE)
+[![](https://img.shields.io/badge/other%20version-EXCEL-blue.svg)](https://doi.org/10.5281/zenodo.6796526)
+
+Monetary valuation of wood in German forests (stumpage
 values), including estimations of harvest quantities, wood revenues, and harvest
 costs. The functions are sensitive to tree species, mean diameter of the
 harvested trees, stand quality, and logging method. The functions include
@@ -9,13 +16,19 @@ estimations for the consequences of disturbances on revenues and costs.
 
 The underlying assortment tables are taken from Offer and Staupendahl (2018)
 with corresponding functions for salable and skidded volume derived in Fuchs et
-al. (in preparation). Wood revenue and harvest cost functions were taken from v.
+al. (2023). Wood revenue and harvest cost functions were taken from v.
 Bodelschwingh (2018). The consequences of disturbances refer to Dieter (2001),
 Möllmann and Möhring (2017), and Fuchs et al. (2022a, 2022b). For the full
 references see documentation of the functions, package README, and Fuchs et al.
-(in preparation). Apart from Dieter (2001) and Möllmann and Möhring (2017),
+(2023). Apart from Dieter (2001) and Möllmann and Möhring (2017),
 all functions and factors are based on data from HessenForst, the forest
 administration of the Federal State of Hesse in Germany.
+
+The current stable release of the <em>R</em> package
+<strong>woodValuationDE</strong> is available at
+[CRAN](https://cran.r-project.org/package=woodValuationDE). We have also
+published a simplified version with the main functions as an <em>EXCEL</em>
+file at [Zenodo](https://doi.org/10.5281/zenodo.6796526).
 
 <h1><a name="menu"></a></h1>
 
@@ -24,6 +37,7 @@ administration of the Federal State of Hesse in Germany.
 3. <a href="#functions">Functions</a>
    * <a href="#fct_vol_salable">vol_salable()</a>
    * <a href="#fct_vol_skidded">vol_skidded()</a>
+   * <a href="#fct_vol_assortment">vol_assortment()</a>
    * <a href="#fct_wood_revenues">wood_revenues()</a>
    * <a href="#fct_harvest_costs">harvest_costs()</a>
    * <a href="#fct_wood_valuation">wood_valuation()</a>
@@ -31,6 +45,7 @@ administration of the Federal State of Hesse in Germany.
    * <a href="#fct_get_species_codes">get_species_codes()</a>
 4. <a href="#example">Tutorial with yield tables</a>
 5. <a href="#citation">Recommended citation</a>
+5. <a href="#funding">Funding</a>
 6. <a href="#references">References</a>
 
 <h1><a name="introduction">Introduction</a></h1>
@@ -62,7 +77,7 @@ operational harvest and sale data from HessenForst, the public forest service of
 the Federal State of Hesse in Germany. The underlying assortment tables are
 taken from [Offer and Staupendahl (2018)](
 #offer.2018) with corresponding functions for the harvest quantities derived in
-[Fuchs et al. (in preparation)](#fuchs.inpreparation). Wood revenue and harvest
+[Fuchs et al. (2023)](#fuchs.2023). Wood revenue and harvest
 cost functions were taken from [v. Bodelschwingh (2018)](#vbodelschwingh.2018).
 The consequences of disturbances refer to [Dieter (2001)](
 #dieter.2001)<sup>[1](#fndieter)</sup>, [Möllmann and Möhring (2017)](
@@ -84,9 +99,7 @@ limitations of <strong>woodValuationDE</strong>, we refer the readers to the
 technical note:
 </strong>
 
-[Fuchs et al. (in preparation)](#fuchs.inpreparation)
-
-<em>We will add the full reference once the manuscript is published.</em>
+[Fuchs et al. (2023)](#fuchs.2023)
 
 <strong>
 We encourage users to conduct sensitivity analyses and to review the default
@@ -118,7 +131,7 @@ revenues and costs per volume unit, and (iii) the net revenues (see Fig. 1).
     <i>Fig. 1:</i> Structural outline of
     <strong>woodValuationDE</strong> with user input and output as well as the
     main functions. Font: bold: main elements, italics: functions. Color: blue:
-    function derived in Fuchs et al. (in preparation) based on Offer and
+    function derived in Fuchs et al. (2023) based on Offer and
     Staupendahl (2018), green: functions taken from v. Bodelschwingh (2018),
     red: calamity factors derived in Dieter (2001), Möllmann and Möhring
     (2017), and Fuchs et al. (2022a, 2022b). Box shape: rectangle: functions
@@ -190,7 +203,7 @@ of wood which is taken out of the forest for usage. The share of salable
 wood is required to  derive the wood revenues per unit volume over bark.
 The function is based on the assortment tables from
 [Offer and Staupendahl (2018)](#offer.2018) and its derivation is
-described in [Fuchs et al. (inpreparation)](#fuchs.inpreparation). The
+described in [Fuchs et al. (2023)](#fuchs.2023). The
 underlying assortment tables are based on data from HessenForst, the
 public forest service of the Federal State of Hesse in Germany.
 
@@ -212,7 +225,7 @@ We derived the share of salable volume <i>v<sub>salable</sub></i> based on these
 assortment tables. Since the assortment tables only provide the values in
 diameter steps of 2 cm, a Gompertz function was fitted in order to have a
 continuous model (see
-[Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
+[Fuchs et al., 2023](#fuchs.2023)). For the model
 fitting, the modified formulation according to
 [Fischer and Schönfelder (2017)](#fischer.2017) was used:
 
@@ -304,7 +317,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -376,7 +389,7 @@ be commercially delivered to the forest road, the pulpwood and sawlog
 assortments. The share of skidded wood is required to derive the harvest costs
 per unit volume over bark. The function is based on the assortment tables from
 [Offer and Staupendahl (2018)](#offer.2018) and its derivation is described in
-[Fuchs et al. (in preparation)](#fuchs.inpreparation). The underlying assortment
+[Fuchs et al. (2023)](#fuchs.2023). The underlying assortment
 tables are based on data from HessenForst, the public forest service of the
 Federal State of Hesse in Germany.
 
@@ -397,7 +410,7 @@ are provided in [Offer and Staupendahl (2008)](#offer.2008) and
 We derived the share of skidded volume <i>v<sub>skidded</sub></i> based on these
 assortment tables. Since the assortment tables only provide the values in
 diameter steps of 2 cm, a Gompertz function was fitted to have a continuous
-model (see [Fuchs et al., in preparation](#fuchs.inpreparation)). For the model
+model (see [Fuchs et al., 2023](#fuchs.2023)). For the model
 fitting, the modified formulation according to
 [Fischer and Schönfelder (2017)](#fischer.2017) was used:
 
@@ -461,6 +474,105 @@ vol_skidded(rep(seq(20, 50, 10),
                 each = 4),
             logging.method = rep(c("manually", "harvester"),
                                each = 4))
+```
+
+<h2><em><a name="fct_vol_assortment">vol_assortment()</a></em></h2>
+
+The function estimates volume shares of specific assortment (groups). These are
+expressed in relation to the salable volume. At the moment, we implemented the
+share of saw logs. This also allows for calculating the share of
+pulp wood. The function is based on the assortment tables from
+[Offer and Staupendahl (2018)](#offer.2018). Its derivation is similar to the
+approach described in [Fuchs et al. (2023)](#fuchs.2023) for the salable and
+skidded volume. The underlying assortment tables are based on data from 
+HessenForst, the public forest service of the Federal State of Hesse in Germany.
+
+<h3>Data and model</h3>
+
+The assortment tables from [Offer and Staupendahl (2018)](#offer.2018) provide
+conversion factors from volume over bark to harvested volume under bark. In
+addition, they provide the share of non-utilized wood, e.g., due to fixed
+assortment lengths, and private fuelwood thereof. The assortment tables were 
+derived for HessenForst with the calculation program HOLZERNTE 7.1
+[(Schöpfer et al., 2003)](#schopfer.2003). Additional parameters were defined by
+forest district officers and validated against harvest and sale statistics of
+HessenForst. More details on the assortment tables and their derivation
+are provided in [Offer and Staupendahl (2008)](#offer.2008) and
+[Offer and Staupendahl (2009)](#offer.2009).
+
+We derived the share of saw logs <i>v<sub>saw.logs</sub></i> based on these
+assortment tables. Since the assortment tables only provide the values in
+diameter steps of 2 cm, a Gompertz function was fitted to have a continuous
+model (cf. [Fuchs et al., 2023](#fuchs.2023)). For the model fitting, the
+modified formulation according to
+[Fischer and Schönfelder (2017)](#fischer.2017) was used:
+
+<p align="center">
+  <i>v<sub>saw.logs</sub></i> = <i>A</i> * exp( -exp(
+  <i>z<sub>m</sub></i> / <i>A</i> * exp(1) * (<i>t<sub>w</sub></i> -
+  <i>d<sub>q</sub></i>))),
+</p>
+
+with the volume share of saw logs <i>v<sub>saw.logs</sub></i>, the
+quadratic mean diameter <i>d<sub>q</sub></i>, and the parameters
+<i>A</i>, <i>z<sub>m</sub></i> and <i>t<sub>w</sub></i>. The actual parameter
+values depend on species, stand quality, and logging method.
+
+<h3>Input</h3>
+
+Apart from <i>species.code.type</i> and <i>assortment</i>, all user inputs can 
+be provided as single values or as a vector. If mixed, the single values will be
+recycled.
+
+<h4><i>assortment</i></h4>
+
+Wood assortment whose share is sought, currently implemented:
+<i>"saw.logs"</i>.
+
+<h4><i>diameter.q</i></h4>
+
+<h4><i>species</i></h4>
+
+<h4><i>value.level</i></h4>
+
+<h4><i>logging.method</i></h4>
+
+<h4><i>species.code.type</i></h4>
+
+For details see <a href="#fct_vol_salable">vol_salable()</a>.
+
+<h3>Output</h3>
+
+A vector with relative shares of respective assortment.
+
+<h3>Application</h3>
+
+``` r
+# saw log volume per cubic meter salable volume
+share.saw.logs <- vol_assortment(40,
+                                 "beech",
+                                 "saw.logs")
+share.saw.logs
+ 
+# fuel wood per cubic meter salable volume
+share.fuel.wood <- (vol_salable(40,
+                                "beech") -
+                      vol_skidded(40,
+                                  "beech")) /
+   vol_salable(40,
+               "beech")
+share.fuel.wood
+
+# pulp wood per cubic meter salable volume
+share.pulp.wood <- 1 - share.saw.logs - share.fuel.wood
+ 
+# saw log volume per cubic meter volume over bark
+vol_assortment(40,
+               "beech",
+               "saw.logs") *
+   vol_salable(40,
+               "beech")
+
 ```
 
 <h2><em><a name="fct_wood_revenues">wood_revenues()</a></em></h2>
@@ -624,7 +736,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -836,7 +948,7 @@ from [KWF (2006)](#kwf.2006) and [AFL (2014)](#afl.2014). The fitted
 model function for the harvest costs <i>h</i> is:
 
 <p align="center">
-  <i>h</i> = max(<i>a</i> *
+  <i>h</i> = min(<i>a</i> *
   <i>d<sub>q</sub></i><sup><i>b</i></sup> + <i>c</i>,
   <i>h<sub>max</sub></i>),
 </p>
@@ -1168,7 +1280,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -1446,7 +1558,7 @@ The logging methods <i>"manually"</i> and <i>"harvester"</i> refer to
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018). Since, e.g., for
 deciduous species a maximum diameter of 40 cm is assumed for highly
 mechanized logging,
-[Fuchs et al. (in preparation)](#fuchs.inpreparation) derived the method
+[Fuchs et al. (2023)](#fuchs.2023) derived the method
 <i>"combined"</i>. This refers to combinations, as applied by
 [v. Bodelschwingh (2018)](#vbodelschwingh.2018) in the harvest cost
 model, assuming diameter-specific proportions of motor-manual and highly mechanized
@@ -1669,40 +1781,63 @@ In the following, we will demonstrate the application of
 <strong>woodValuationDE</strong> using yield tables. We will show the
 calculations required to obtain the figures presented below. These are similar
 to those included in the technical note
-[(Fuchs et al. in preparation)](#fuchs.inpreparation). In contrast to the
+[(Fuchs et al., 2023)](#fuchs.2023). In contrast to the
 technical note, we use the new generation of yield tables
-[(Albert et al., 2021)](#albert.2021) as an example for a growth model.
+[(Nuske et al., 2022)](#nuske.2022) as an example for a growth model.
 
-First, we install woodValuationDE and load the required R packages:
+First, we install <strong>woodValuationDE</strong>. We load the required R
+packages, including the <strong>et.nwfva</strong> package
+[(Nuske et al., 2022)](#nuske.2022) that provides yield table data for our
+example:
+
 ``` r
 install.packages("woodValuationDE")
 
 library(woodValuationDE)
 library(tidyverse)
 library(readxl)
+library(ggplot2)
+library(patchwork)
+library(et.nwfva)
 ```
 
-We download the yield tables [(Albert et al., 2021)](#albert.2021) from zenodo
-and unzip them:
-``` r
-# create folder for the yield tables in the current working directory
-if (!dir.exists("./yield_tables")) {
-  dir.create("./yield_tables")
-}
+We then import the yield tables:
 
-# download and unzip yield table zip file
-download.file(
-  "https://zenodo.org/record/6343907/files/Neue%20Generation%20von%20Ertragstafeln.zip",
-  "./yield_tables/yield_tables.zip")
-unzip("./yield_tables/yield_tables.zip",
-      exdir = "./yield_tables")
+``` r
+yield.table <-  bind_rows(
+  tibble(species = "oak", 
+         et_tafel(art = c("Eiche"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "beech", 
+         et_tafel(art = c("Buche"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "spruce", 
+         et_tafel(art = c("Fichte"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "douglas.fir", 
+         et_tafel(art = c("Douglasie"),
+                  bon = -1,
+                  bon_typ = "relativ")),
+  tibble(species = "pine", 
+         et_tafel(art = c("Kiefer"),
+                  bon = -1,
+                  bon_typ = "relativ"))
+)
+
+yield.table <- yield.table %>%
+  select(species,
+         h.100.m = H100,
+         age = Alter,
+         diameter.remaining.cm = Dg,
+         volume.remaining.m3.ha = V)
 ```
 
-We load the yield table data into R. Due to the format of the files, this may
-look a bit complex.
+We add some information and translations for the visualization.
+
 ``` r
-# specify which species should be loaded and provide translations
-yield.table <- tibble()
 species.list <- tibble(
   en = c("beech",
          "douglas.fir",
@@ -1713,52 +1848,11 @@ species.list <- tibble(
          "Douglasie",
          "Eiche",
          "Fichte",
-         "Kiefer"),
-  h.100.m = c(40.5,
-              50,
-              33,
-              43,
-              37),
-  # required to read out only data of the highest site index
-  number.rows = c(21,
-                  19,
-                  35,
-                  14,
-                  17)
-)
+         "Kiefer"))
+         
+# plotted mean diameters [cm]
+diameter.range <- c(10, 60)
 
-# for loop over the species
-for (i in 1:nrow(species.list)) {
-  
-  yield.table <- read_excel(
-    paste0("./yield_tables/",
-           species.list$de[i],
-           "ntafel.xlsx"),
-    skip = 4,
-    n_max = species.list$number.rows[i]
-  )[-1, ] %>% 
-    select(Alter,
-           `mittl. Durch- messer...6`,
-           Vorrat...8) %>% 
-    rename(age = Alter,
-           diameter.remaining.cm = `mittl. Durch- messer...6`,
-           volume.remaining.m3.ha = Vorrat...8) %>% 
-    add_column(h.100.m = species.list$h.100.m[i],
-               .before = 1) %>% 
-    add_column(species = species.list$en[i],
-               .before = 1) %>% 
-    bind_rows(yield.table)
-  
-}
-
-# correct data types
-yield.table <- yield.table %>% 
-  mutate(
-    age = as.numeric(age),
-    diameter.remaining.cm = as.numeric(diameter.remaining.cm),
-    volume.remaining.m3.ha = as.numeric(volume.remaining.m3.ha)
-  )
-  
 # colors tree species (Lower Saxony)
 colors <- c(
   "oak"         = rgb(255, 255,   0, maxColorValue = 255),
@@ -1767,9 +1861,7 @@ colors <- c(
   "douglas.fir" = rgb(255,   0, 255, maxColorValue = 255),
   "pine"        = rgb(191, 191, 191, maxColorValue = 255)
 )
-  
-# plotted mean diameters [cm]
-diameter.range <- c(10, 60)
+         
 ```
 
 <h2>Figure 1: Fundamental functions</h2>
@@ -1777,6 +1869,7 @@ diameter.range <- c(10, 60)
 Calculate harvest quantities, revenues, and costs over the diameter range
 specified above. The functions are applied with default parameters for the five
 species available in the yield tables.
+
 ``` r
 dat.1 <- tibble(
   species = rep(
@@ -1809,7 +1902,7 @@ dat.1 <- tibble(
       species)
     
   )
-  
+
 # long format for plotting
 dat.1.gath <- dat.1 %>% 
   gather("variable",
@@ -1826,6 +1919,7 @@ dat.1.gath <- dat.1 %>%
 ```
 
 Harvest quantities:
+
 ``` r
 p1.1 <- 
   ggplot() +
@@ -1839,7 +1933,7 @@ p1.1 <-
     aes(diameter,
         value,
         col = species),
-    size = 1) +
+    linewidth = 1) +
   labs(x = "Quadratic mean diameter [cm]",
        y = "Relative volume share") +
   scale_x_continuous(breaks = seq(10, 60, 10)) +
@@ -1850,6 +1944,7 @@ p1.1 <-
 ```
 
 Revenues and costs:
+
 ``` r
 p1.2 <- 
   ggplot() +
@@ -1864,7 +1959,7 @@ p1.2 <-
     aes(diameter,
         value,
         color = species),
-    size = 1) +
+    linewidth = 1) +
   labs(x = "Quadratic mean diameter [cm]",
        y = bquote("Costs or (net) revenues [\u20AC m"^-3~"]")) +
   scale_x_continuous(breaks = seq(10, 60, 10)) +
@@ -1875,11 +1970,9 @@ p1.2 <-
 ```
 
 Combined plot:
+
 ``` r
-p1.1 +
-  p1.2 +
-  plot_layout(nrow = 2) +
-  plot_annotation(tag_levels = "a")
+p1.1 / p1.2 + plot_annotation(tag_levels = "a")
 ```
 <figure align="center">
   <img src="./man/fig/example_fig1_functions.png" width="100%"/>
@@ -1890,6 +1983,7 @@ p1.1 +
 For this figure, we calculate stumpage values over age based on the yield
 tables. The figure should illustrate the influence of the stand quality (value
 level) as well as the accessibility for harvest operations (cost level).
+
 ``` r
 dat.2 <- yield.table %>% 
   filter(diameter.remaining.cm <= 60 &
@@ -1920,6 +2014,7 @@ dat.2.2 <- dat.2a %>%
 ```
 
 Influence of the stand quality:
+
 ``` r
 p2.1 <- ggplot() +
   geom_hline(yintercept = 0,
@@ -1929,7 +2024,7 @@ p2.1 <- ggplot() +
             aes(age,
                 net.revenue,
                 col = as.factor(value.level)),
-            size = 1) +
+            linewidth = 1) +
   scale_x_continuous(breaks = c(seq(40, 160, 40))) +
   scale_color_discrete(name = "value.level") +
   labs(x = "Age [a]",
@@ -1940,6 +2035,7 @@ p2.1 <- ggplot() +
 ```
 
 Influence of the accessibility for harvest operations:
+
 ``` r
 p2.2 <- ggplot() +
   geom_hline(yintercept = 0,
@@ -1949,7 +2045,7 @@ p2.2 <- ggplot() +
             aes(age,
                 net.revenue,
                 col = as.factor(cost.level)),
-            size = 1) +
+            linewidth = 1) +
   scale_x_continuous(breaks = c(seq(40, 160, 40))) +
   scale_color_discrete(name = "cost.level") +
   labs(x = "Age [a]",
@@ -2017,6 +2113,7 @@ a reduction in net revenues by a factor of 0.5. Thus, the revenues and costs are
 only meaningful if they are interpreted in their sum (as net revenues).
 
 Plot:
+
 ``` r
 ggplot() +
   geom_hline(yintercept = 0,
@@ -2046,12 +2143,41 @@ ggplot() +
 
 <h1><a name="citation">Recommended citation</a></h1>
 
-Until the publication of the technical note (Fuchs et al., in preparation),
-please cite the R package on CRAN.
+Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster, Roman;
+Staupendahl, Kai; Offer, Armin; Möhring, Bernhard; Paul, Carola (2023):
+woodValuationDE: A consistent framework for calculating stumpage values in
+Germany (technical note). <em>Allg. Forst- u. J.-Ztg.</em>
+**193 (1/2)**, p. 16-29. doi: 10.23765/afjz0002090.
+
+Bibtex:
+
+```
+@article{
+  title = {{{woodValuationDE}}: {{A}} Consistent Framework for Calculating Stumpage Values in {{Germany}} (Technical Note)},
+  author = {Fuchs, Jasper M. and Husmann, Kai and {von Bodelschwingh}, Hilmar and Koster, Roman and Staupendahl, Kai and Offer, Armin and M{\"o}hring, Bernhard and Paul, Carola},
+  year = {2023},
+  journal = {Allg. Forst- Jagdztg.},
+  volume = {193},
+  number = {1/2},
+  pages = {16--29},
+  doi = {10.23765/afjz0002090}
+}
+```
 
 For details on the applied models and underlying assumptions, such as
 assumptions on the economic consequences of disturbances, please also cite the
 original publication(s).
+
+<h1><a name="funding">Funding</a></h1>
+
+This work is part of a PhD project by J.F., partly financed by the University of
+Göttingen and supported by the Graduate School Forest and Agricultural Sciences
+Göttingen. J.F. further acknowledges partial funding through the Federal
+Ministry of Education and Research Germany (BMBF) in the 2019-2020 BiodivERsA
+joint call for research proposals, under the BiodivClim ERA-Net COFUND
+programme, and with the funding organisations Academy of Finland (decision no.
+344722), ANR (France, project ANR-20-EBI5-0005-03), and Federal Ministry of
+Education and Research (Germany, grant no. 16LC2021A). 
 
 <h1><a name="references">References</a></h1>
 
@@ -2060,15 +2186,9 @@ Tarife, Kalkulationen, Adressen. [Reference prices, tariffs,
 calculations, addresses]. AfL Niedersachsen e.V. <em>Hannover:
 Deutscher Landwirtschaftsverlag</em>.
 
-<a id="albert.2021">Albert</a>, Matthias; Nagel, Jürgen; Schmidt, Matthias;
-Nagel, Ralf-Volker; Spellmann, Hermann (2021): Eine neue Generation von
-Ertragstafeln für Eiche, Buche, Fichte, Douglasie und Kiefer (1.0).
-[A new generation of yield tables for oak, beech, spruce, Douglas fir, and pine
-(1.0). [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.6343907>
-
 <a id="curtis.2000">Curtis</a>, Robert O.; Marshall, David D. (2000):
 Technical Note: Why Quadratic Mean Diameter?
-<em>West. J. Appl. For.</em> **15 (3)**, S. 137-139.
+<em>West. J. Appl. For.</em> **15 (3)**, p. 137-139.
 <https://doi.org/10.1093/wjaf/15.3.137>.
 
 <a id="deutscherforstwirtschaftsrat.2020">Deutscher
@@ -2080,19 +2200,19 @@ Nachwachsende Rohstoffe e.V. (FNR). Gülzow-Prüzen. Online available at
 
 <a id="dieter.2001">Dieter</a>, Matthias (2001): Land expectation values
 for spruce and beech calculated with Monte Carlo modelling techniques.
-<em>For. Policy Econ.</em> **2 (2)**, S. 157-166.
+<em>For. Policy Econ.</em> **2 (2)**, p. 157-166.
 <https://doi.org/10.1016/S1389-9341(01)00045-4>.
 
 <a id="fischer.2017">Fischer</a>, Christoph; Schönfelder, Egbert
 (2017): A modified growth function with interpretable parameters applied
 to the age--height relationship of individual trees. <em>Can. J. For.
-Res.</em> **47**, S. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
+Res.</em> **47**, p. 166--173. <https://doi.org/10.1139/cjfr-2016-0317>.
 
 <a id="fuchs.2022a">Fuchs</a>, Jasper M.; Hittenbeck, Anika;
 Brandl, Susanne; Schmidt, Matthias; Paul, Carola (2022b):
 Adaptation Strategies for Spruce Forests - Economic Potential of Bark
 Beetle Management and Douglas Fir Cultivation in Future Tree Species
-Portfolios. <em>Forestry</em> **95 (2)**, S. 229-246.
+Portfolios. <em>Forestry</em> **95 (2)**, p. 229-246.
 <https://doi.org/10.1093/forestry/cpab040>
 
 <a id="fuchs.2022b">Fuchs</a>, Jasper M.; v. Bodelschwingh, Hilmar; Paul,
@@ -2100,10 +2220,12 @@ Carola; Husmann, Kai (2022a): Quantifying the consequences of disturbances on
 wood revenues with Impulse Response Functions. <em>For. Policy Econ.</em>
 **140**, art. 102738. <https://doi.org/10.1016/j.forpol.2022.102738>.
 
-<a id="fuchs.inpreparation">Fuchs</a>, Jasper M.; Husmann, Kai;
+<a id="fuchs.2023">Fuchs</a>, Jasper M.; Husmann, Kai;
 v. Bodelschwingh, Hilmar; Koster, Roman; Staupendahl, Kai; Offer, Armin;
-Möhring, Bernhard; Paul, Carola (in preparation): woodValuationDE: A consistent
-framework for calculating stumpage values in Germany (technical note)
+Möhring, Bernhard; Paul, Carola (2023): woodValuationDE: A consistent
+framework for calculating stumpage values in Germany (technical note).
+<em>Allg. Forst- u. J.-Ztg.</em> **193 (1/2)**, p. 16-29.
+doi: 10.23765/afjz0002090.
 
 <a id="kwf.2006">KWF</a> (ed.) (2006): Holzernteverfahren -
 Vergleichende Erhebung und Beurteilung, Daten CD mit Beschreibung der
@@ -2113,19 +2235,25 @@ harvesting methods and calculations.]. <em>Groß-Umstadt: KWF.</em>
 
 <a id="moellmann.2017">Möllmann</a>, Torsten B.; Möhring, Bernhard
 (2017): A practical way to integrate risk in forest management
-decisions. <em>Ann. For. Sci.</em> **74 (4)**, S. 75.
+decisions. <em>Ann. For. Sci.</em> **74 (4)**, p. 75-87.
+<https://doi.org/10.1007/s13595-017-0670-x>.
+
+<a id="nuske.2022">Nuske</a>, Robert; Staupendahl, Kai; Albert, Matthias (2022).
+et.nwfva: Forest Yield Tables for Northwest Germany and their Application
+(Version 0.1.1) [Computer software]. https://github.com/rnuske/et.nwfva and
+https://CRAN.R-project.org/package=et.nwfva
 
 <a id="offer.2008">Offer</a>, Armin; Staupendahl, Kai (2008): Neue
 Bestandessortentafeln für die Waldbewertung und ihr Einsatz in der
 Bewertungspraxis. [New stand assortment tables for forest valuation and
 their application in valuation practice.].
-<em>Wertermittlungsforum</em> **26 (4)**, S. 146-154.
+<em>Wertermittlungsforum</em> **26 (4)**, p. 146-154.
 
 <a id="offer.2009">Offer</a>, Armin; Staupendahl, Kai (2009): Neue
 Bestandessortentafeln für die Waldbewertung und ihr Einsatz in der
 Bewertungspraxis. [New stand assortment tables for forest valuation and
 their application in valuation practice.]. <em>Forst und Holz</em> **64
-(5)**, S. 16--25.
+(5)**, p. 16--25.
 
 <a id="offer.2018">Offer</a>, Armin; Staupendahl, Kai (2018):
 Holzwerbungskosten- und Bestandessortentafeln (Wood Harvest Cost and
@@ -2135,7 +2263,7 @@ Assortment Tables). <em>Kassel: HessenForst (publisher)</em>.
 (2003): Entscheidungshilfen für die Forst- und Holzwirtschaft - Zur
 Abschlussversion von HOLZERNTE. [Decision Support for Forestry and Wood
 Industry - The Final Version of HOLZERNTE]. <em>Forst und Holz</em>
-**58 (18)**, S. 545--550.
+**58 (18)**, p. 545--550.
 
 <a id="vbodelschwingh.2018">v. Bodelschwingh</a>, Hilmar (2018):
 Oekonomische Potentiale von Waldbeständen. Konzeption und Abschätzung

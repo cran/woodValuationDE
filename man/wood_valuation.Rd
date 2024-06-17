@@ -88,7 +88,7 @@ for timely salvage fellings in less advanced attack
 stages (both according to Fuchs et al. 2022a); and
 \code{"stand.damage.fuchs.2022b"} to disturbances
 affecting only one stand, 
-\code{"regional.disturbances.fuchs.2022b"} to 
+\code{"regional.disturbance.fuchs.2022b"} to 
 disturbances with effects on the regional wood market
 and \code{"transregional.calamity.fuchs.2022b"} to
 calamities affecting transregional wood markets (the
@@ -207,7 +207,7 @@ wood_valuation(10,
 \references{
 Dieter, Matthias (2001): Land expectation values for spruce and
             beech calculated with Monte Carlo modelling techniques. For.
-            Policy Econ. 2 (2), S. 157-166.
+            Policy Econ. 2 (2), p. 157-166.
             \doi{10.1016/S1389-9341(01)00045-4}.
 
 Fuchs, Jasper M.; Hittenbeck, Anika; Brandl, Susanne; Schmidt,
@@ -224,12 +224,14 @@ Fuchs, Jasper M.; v. Bodelschwingh, Hilmar; Lange, Alexander;
 
 Fuchs, Jasper M.; Husmann, Kai; v. Bodelschwingh, Hilmar; Koster,
             Roman; Staupendahl, Kai; Offer, Armin; Moehring, Bernhard, Paul,
-            Carola (in preparation): woodValuationDE: A consistent framework
-            for calculating stumpage values in Germany (technical note)
+            Carola (2023): woodValuationDE: A consistent framework
+            for calculating stumpage values in Germany (technical note).
+            Allgemeine Forst- und Jagdzeitung 193 (1/2), p. 16-29.
+            doi: 10.23765/afjz0002090
 
 Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
             to integrate risk in forest management decisions. Ann. For. Sci.
-            74 (4), S.75. \doi{10.1007/s13595-017-0670-x}
+            74 (4), p. 75. \doi{10.1007/s13595-017-0670-x}
 
 Offer, Armin; Staupendahl, Kai (2018): Holzwerbungskosten- und
             Bestandessortentafeln (Wood Harvest Cost and Assortment

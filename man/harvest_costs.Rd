@@ -55,7 +55,7 @@ for timely salvage fellings in less advanced attack
 stages (both according to Fuchs et al. 2022a); and
 \code{"stand.damage.fuchs.2022b"} to disturbances
 affecting only one stand, 
-\code{"regional.disturbances.fuchs.2022b"} to 
+\code{"regional.disturbance.fuchs.2022b"} to 
 disturbances with effects on the regional wood market
 and \code{"transregional.calamity.fuchs.2022b"} to
 calamities affecting transregional wood markets (the
@@ -153,14 +153,14 @@ harvest_costs(40,
 \references{
 Dieter, Matthias (2001): Land expectation values for spruce and
             beech calculated with Monte Carlo modelling techniques. For.
-            Policy Econ. 2 (2), S. 157-166.
+            Policy Econ. 2 (2), p. 157-166.
             \doi{10.1016/S1389-9341(01)00045-4}.
 
 Fuchs, Jasper M.; Hittenbeck, Anika; Brandl, Susanne; Schmidt,
             Matthias; Paul, Carola (2022a): Adaptation Strategies for
             Spruce Forests - Economic Potential of Bark Beetle Management and
             Douglas Fir Cultivation in Future Tree Species Portfolios.
-            Forestry 95 (2) 229-246. \doi{10.1093/forestry/cpab040}
+            Forestry 95 (2) p. 229-246. \doi{10.1093/forestry/cpab040}
 
 Fuchs, Jasper M.; v. Bodelschwingh, Hilmar; Lange, Alexander;
             Paul, Carola; Husmann, Kai (2022b): Quantifying the
@@ -170,7 +170,7 @@ Fuchs, Jasper M.; v. Bodelschwingh, Hilmar; Lange, Alexander;
 
 Moellmann, Torsten B.; Moehring, Bernhard (2017): A practical way
             to integrate risk in forest management decisions. Ann. For. Sci.
-            74 (4), S.75. \doi{10.1007/s13595-017-0670-x}
+            74 (4), p.75. \doi{10.1007/s13595-017-0670-x}
 
 v. Bodelschwingh, Hilmar (2018): Oekonomische Potentiale von
             Waldbestaenden. Konzeption und Abschaetzung im Rahmen einer
